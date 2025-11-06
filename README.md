@@ -31,7 +31,7 @@ db:MapleStory
 user: root
 password: 123456
 
-2. JDK版本为：17
+2. JDK版本为：11
 
 3. 模拟湾湾地区登陆工具：
    https://github.com/InWILL/Locale_Remulator?tab=readme-ov-file#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-1
