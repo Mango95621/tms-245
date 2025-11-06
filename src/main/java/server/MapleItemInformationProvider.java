@@ -816,11 +816,15 @@ public class MapleItemInformationProvider {
             }
             DatabaseConnection.domain(con -> {
                 WzSqlName.wz_itemdata.drop(con);
-                SqlTool.update(con, "CREATE TABLE `wz_itemdata` (`itemid` int NOT NULL,`data` mediumtext NOT NULL,`name` text NOT NULL,`desc` text NOT NULL,`msg` text NOT NULL,PRIMARY KEY (`itemid`))");
+                SqlTool.update(con, "CREATE TABLE `wz_itemdata` (`itemid` int NOT NULL,`data` mediumtext NOT NULL,`name` text NOT NULL,`desc` text NOT NULL,`msg` text NOT NULL,PRIMARY KEY (`itemid`))CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
 
                 for (Entry<Integer, Map<String, Object>> data : itemDataCache.entrySet()) {
                     SqlTool.update(con, "INSERT INTO `wz_itemdata` (`itemid`,`data`,`name`,`desc`,`msg`) VALUES (?,?,?,?,?)", new Object[]{
-                            data.getKey(), new JSONObject(data.getValue()).toString(), itemName.getOrDefault(data.getKey(), ""), itemDesc.getOrDefault(data.getKey(), ""), itemMsg.getOrDefault(data.getKey(), "")
+                            data.getKey(),
+                            new JSONObject(data.getValue()).toString(),
+                            itemName.getOrDefault(data.getKey(), ""),
+                            itemDesc.getOrDefault(data.getKey(), ""),
+                            itemMsg.getOrDefault(data.getKey(), "")
                     });
                 }
                 WzSqlName.wz_itemdata.update(con);
