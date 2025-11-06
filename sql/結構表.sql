@@ -1,10 +1,10 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3308
+Source Server         : localhost_3306
 Source Server Version : 50150
-Source Host           : localhost:3308
-Source Database       : playms
+Source Host           : localhost:3306
+Source Database       : maplestory
 
 Target Server Type    : MYSQL
 Target Server Version : 50150
@@ -30,14 +30,14 @@ CREATE TABLE `accounts` (
   `loggedin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `lastlogin` timestamp NULL DEFAULT NULL,
   `createdat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `birthday` date NOT NULL DEFAULT '0000-00-00',
+  `birthday` date NOT NULL DEFAULT '2025-01-01',
   `banned` tinyint(1) NOT NULL DEFAULT '0',
   `banreason` text,
   `gm` tinyint(1) NOT NULL DEFAULT '0',
   `email` tinytext,
   `macs` tinytext,
   `maclist` tinytext,
-  `tempban` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `tempban` timestamp NOT NULL DEFAULT '2025-01-01 00:00:00',
   `greason` tinyint(4) unsigned DEFAULT NULL,
   `gender` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `SessionIP` varchar(64) DEFAULT NULL,
@@ -1756,7 +1756,7 @@ CREATE TABLE `eventtimes` (
   `cName` varchar(15) CHARACTER SET utf8 NOT NULL,
   `points` int(11) NOT NULL DEFAULT '0',
   `times` int(11) NOT NULL DEFAULT '0',
-  `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT '2025-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -2828,7 +2828,7 @@ CREATE TABLE `paylog` (
   `account` varchar(20) CHARACTER SET utf8 NOT NULL,
   `points` int(11) NOT NULL,
   `rmb` int(11) NOT NULL,
-  `paytime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `paytime` timestamp NOT NULL DEFAULT '2025-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -3400,7 +3400,7 @@ CREATE TABLE `suggest` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `charid` varchar(20) CHARACTER SET utf8 NOT NULL,
   `text` text CHARACTER SET utf8 NOT NULL,
-  `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT '2025-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `title` varchar(50) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3416,7 +3416,7 @@ DROP TABLE IF EXISTS `systemupdatelog`;
 CREATE TABLE `systemupdatelog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `patchname` varchar(50) NOT NULL,
-  `lasttime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `lasttime` timestamp NOT NULL DEFAULT '2025-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -6697,7 +6697,7 @@ CREATE TABLE `ecpay_donatepoints` (
   `Points` int(11) NOT NULL,
   `LastAttempt` varchar(20) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for ecpay_payment
@@ -6716,7 +6716,7 @@ CREATE TABLE `ecpay_payment` (
   `payment_status` varchar(20) NOT NULL,
   `accountName` varchar(20) NOT NULL,
   PRIMARY KEY (`order_number`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- View structure for `readable_cheatlog`
