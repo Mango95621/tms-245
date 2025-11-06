@@ -20,7 +20,7 @@ public final class MapleDataProviderFactory {
     public static void init() {
         File in = new File(WZPATH);
         if (!in.exists()) {
-            System.err.print("請輸入WZ資料夾路徑:");
+            System.err.print("请输入WZ资料夹路径:");
             WZPATH = scanner.next().replace("\\", "\\\\");
             Config.setProperty("wzpath", WZPATH);
             init();

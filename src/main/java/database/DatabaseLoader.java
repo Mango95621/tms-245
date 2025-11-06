@@ -50,25 +50,25 @@ public class DatabaseLoader
 
             java.sql.DriverManager.getConnection(url, ServerConfig.DB_USER, ServerConfig.DB_PASSWORD).close();
         } catch (SQLException e) {
-            System.err.println("無法連結到資料庫, 請先設定資料庫訊息");
+            System.err.println("无法连接到数据库，请先设定数据库信息");
 
-            System.err.print("主機:");
+            System.err.print("数据库主机:");
             ServerConfig.DB_IP = scanner.next();
             Config.setProperty("db.ip", ServerConfig.DB_IP);
 
-            System.err.print("埠:");
+            System.err.print("数据库端口:");
             ServerConfig.DB_PORT = scanner.next();
             Config.setProperty("db.port", ServerConfig.DB_PORT);
 
-            System.err.print("資料庫名稱:");
+            System.err.print("数据库名称:");
             ServerConfig.DB_NAME = scanner.next();
             Config.setProperty("db.name", ServerConfig.DB_NAME);
 
-            System.err.print("使用者名稱:");
+            System.err.print("用户名:");
             ServerConfig.DB_USER = scanner.next();
             Config.setProperty("db.user", ServerConfig.DB_USER);
 
-            System.err.print("密碼:");
+            System.err.print("密码:");
             String passwd = scanner.next();
             if (passwd.equals("_EMPTY_")) passwd = "";
             ServerConfig.DB_PASSWORD = passwd;
