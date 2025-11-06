@@ -22,20 +22,17 @@ JDK版本是11， mysql用57版本，
 ![](asset/Snipaste_2025-06-18_22-50-49.png)
 ![](asset/Snipaste_2025-06-18_22-51-44.png)
 
-
-
-
 几个注意事项：
 1. Mysql 57数据库
 默认配置：
 ip:127.0.0.1
 port:3306
-db:playms
+db:MapleStory
 user: root
 password: 123456
 
+2. JDK版本为：17
 
-2. JDK版本为：11
 3. 模拟湾湾地区登陆工具：
    https://github.com/InWILL/Locale_Remulator?tab=readme-ov-file#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-1
    如下配置：即可在简体环境登陆。
@@ -43,12 +40,8 @@ password: 123456
 
 4. 任务管理器 手动杀掉AES检查.等一分钟可能也行
 
-
 5. 常用指令
 !刷樂豆點 10000
-
-
-
 
 ## 修复
 2025-06-26
