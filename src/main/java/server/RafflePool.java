@@ -142,7 +142,7 @@ public class RafflePool {
                     ps.execute();
                 }
             }
-            try (PreparedStatement ps = con.prepareStatement("SELECT * from raffle_pool GROUP BY type")) {
+            try (PreparedStatement ps = con.prepareStatement("SELECT DISTINCT type from raffle_pool")) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                     allTypes.add(rs.getInt("type"));
@@ -239,7 +239,7 @@ public class RafflePool {
                 if (allPeriods.containsKey(type)) {
                     continue;
                 }
-                try (PreparedStatement ps = con.prepareStatement("SELECT * FROM raffle_pool WHERE type = ? AND period >= 0 GROUP BY period")) {
+                try (PreparedStatement ps = con.prepareStatement("SELECT period FROM raffle_pool WHERE type = ? AND period >= 0 GROUP BY period")) {
                     ps.setInt(1, type);
                     ResultSet rs = ps.executeQuery();
                     while (rs.next()) {
